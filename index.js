@@ -5,7 +5,7 @@ import express from 'express';
 import { logs, SeverityNumber } from '@opentelemetry/api-logs';
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 

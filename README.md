@@ -55,7 +55,7 @@ npm start
 Run this command to process a payment:
 
 ```bash
-curl -X POST http://localhost:3001/process-payment \
+curl -X POST http://localhost:3000/process-payment \
   -H "Content-Type: application/json" \
   -d '{"userId": "user123", "amount": 99.99, "paymentMethod": "credit_card"}'
 ```
@@ -131,7 +131,7 @@ const logExporter = new OTLPLogExporter({
 
 **Trigger validation error:**
 ```bash
-curl -X POST http://localhost:3001/process-payment \
+curl -X POST http://localhost:3000/process-payment \
   -H "Content-Type: application/json" \
   -d '{"userId": "user123"}'
 ```
