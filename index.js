@@ -82,7 +82,7 @@ app.post('/process-payment', async (req, res) => {
       log('WARN', SeverityNumber.WARN, 'High-risk transaction detected', {
         'user.id': userId,
         'transaction.id': transactionId,
-        'fraud_check.score': riskScore.toFixed(2),
+        'fraud_check.score': Math.round(riskScore * 100) / 100,
         'fraud_check.threshold': 70,
         'fraud_check.reason': 'unusual_amount_pattern',
       });
@@ -94,7 +94,7 @@ app.post('/process-payment', async (req, res) => {
     log('INFO', SeverityNumber.INFO, 'Fraud check passed', {
       'user.id': userId,
       'transaction.id': transactionId,
-      'fraud_check.score': riskScore.toFixed(2),
+      'fraud_check.score': Math.round(riskScore * 100) / 100,
       'fraud_check.status': 'passed',
     });
 
